@@ -17,6 +17,7 @@ class DataIngestionConfig:
     train_data_path: str=os.path.join('artifacts',"train.csv")
     test_data_path: str=os.path.join('artifacts',"test.csv")
     raw_data_path: str=os.path.join('artifacts',"data.csv")
+    logging.info("Data Injection artifacts created")
 
 class DataIngestion:
     def __init__(self):
@@ -44,11 +45,11 @@ class DataIngestion:
             return(
                 self.ingestion_config.train_data_path,
                 self.ingestion_config.test_data_path
-
+# D:\Bhanu_Resources\mlproject\src\Components\data_ingestion.py
             )
         except Exception as e:
             raise CustomException(e,sys)
-        
+        # D:\Bhanu_Resources\mlproject\myenv
 if __name__=="__main__":
     obj=DataIngestion()
     train_data,test_data=obj.initiate_data_ingestion()
